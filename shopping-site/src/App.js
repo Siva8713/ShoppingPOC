@@ -1,25 +1,18 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from "./Pages/LoginPage";
-import RegistrationPage from "./Pages/RegistrationPage";
 import HomePage from "./Pages/HomePage";
+import { useState } from "react";
 function App() {
+  const [user, setUser] = useState("");
   const create_router = createBrowserRouter([
     {
       path: "/",
-      element: <LoginPage />,
-    },
-    {
-      path: "/registration",
-      element: <RegistrationPage />,
+      element: <LoginPage setUser={setUser} />,
     },
     {
       path: "/home",
-      element: <HomePage />,
-    },
-    {
-      path: "*",
-      element: <HomePage />,
+      element: <HomePage user={user} />,
     },
   ]);
   return (

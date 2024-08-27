@@ -4,13 +4,7 @@ import Header from "../Components/Header";
 import Sidebar from "../Components/Sidebar";
 import MainContent from "../Components/MainContent";
 
-const user = {
-  name: "John Doe",
-  email: "john.doe@example.com",
-  age: 30,
-};
-
-const HomePage = () => {
+const HomePage = ({ user }) => {
   return (
     <div style={styles.container}>
       <Header user={user} />

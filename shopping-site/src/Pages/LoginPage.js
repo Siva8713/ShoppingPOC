@@ -1,7 +1,54 @@
-export default function LoginPage() {
+import React, { useState } from "react";
+import creds from "../Database/users/users";
+import { useNavigate } from "react-router-dom";
+const LoginPage = (props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    // const response = await fetch(creds);
+    // const users = await response.json();
+    console.log(creds);
+    const user = creds.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (user) {
+      navigate("/home");
+      props.setUser(user);
+    } else {
+      setError("Invalid email or password");
+    }
+  };
+
   return (
-    <>
-      <h1>Login Page</h1>
-    </>
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleLogin}>
+        <div>
+          <label>email:</label>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
-}
+};
+
+export default LoginPage;
