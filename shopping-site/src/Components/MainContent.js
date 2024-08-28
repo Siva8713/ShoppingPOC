@@ -4,53 +4,51 @@ import styles from "./MainContent.module.css";
 const MainContent = ({ user }) => {
   const clothingData = [
     {
-      id: 1,
-      name: "Men's T-Shirt",
-      category: "Men",
-      price: 19.99,
-      imageUrl:
-        "https://img.freepik.com/free-psd/mens-short-sleeve-t-shirt-mockups_126278-122.jpg?w=740&t=st=1724772263~exp=1724772863~hmac=ffa9e7c52732dbf3d43533cf2b4fb0ea4f1ea2c813fa73868b3f04ed063f815c",
+      id: "1",
+      name: "Men",
+      image:
+        "https://img.freepik.com/premium-photo/strong-confident-young-hipster-looking-away-adjusting-his-jacket-while-standing-against-grey-background_425904-11115.jpg?ga=GA1.1.1135502366.1724772254&semt=ais_hybrid",
     },
     {
-      id: 2,
-      name: "Women's Dress",
-      category: "Women",
-      price: 39.99,
-      imageUrl: "https://example.com/womens-dress.jpg",
+      id: "2",
+      name: "Women",
+      image:
+        "https://img.freepik.com/free-photo/cuban-elegance-teenager-olive-fashion_1328-8.jpg?ga=GA1.1.1135502366.1724772254&semt=ais_hybrid",
     },
     {
-      id: 3,
-      name: "Men's Jeans",
-      category: "Men",
-      price: 49.99,
-      imageUrl: "https://example.com/mens-jeans.jpg",
+      id: "3",
+      name: "Kids",
+      image:
+        "https://img.freepik.com/free-photo/children-playing-grass_1098-504.jpg?ga=GA1.1.1135502366.1724772254&semt=ais_hybrid",
     },
     {
-      id: 4,
-      name: "Women's Jacket",
-      category: "Women",
-      price: 79.99,
-      imageUrl: "https://example.com/womens-jacket.jpg",
+      id: "4",
+      name: "footwear",
+      image:
+        "https://img.freepik.com/premium-photo/women-legs-stylish-casual-shoes-modern-sneakers-with-white-laces-close-up-fashionable-teen-girl-clothes-style-photo_526934-706.jpg?ga=GA1.1.1135502366.1724772254&semt=ais_hybrid",
     },
     {
-      id: 5,
-      name: "Unisex Sneakers",
-      category: "Unisex",
-      price: 59.99,
-      imageUrl: "https://example.com/unisex-sneakers.jpg",
+      id: "5",
+      name: "Winter Collection",
+      image:
+        "https://img.freepik.com/premium-photo/top-view-set-warm-clothing_111863-323.jpg?ga=GA1.1.1135502366.1724772254&semt=ais_hybrid",
+    },
+    {
+      id: "6",
+      name: "Accessories",
+      image:
+        "https://img.freepik.com/free-photo/view-women-bag-stuff-wooden-background_93675-134112.jpg?ga=GA1.1.1135502366.1724772254&semt=ais_hybrid",
     },
   ];
 
   return (
     <main className={styles.mainContent}>
       <h1>Welcome {user.name} , what are you looking for? </h1>
-      <div className={styles.product_list}>
+      <div className={styles.product_list} onClick={}>
         {clothingData.map((item) => (
           <div key={item.id} className={styles.product_item}>
-            <img src={item.imageUrl} alt={item.name} />
             <h2>{item.name}</h2>
-            <p>Category: {item.category}</p>
-            <p>Price: ${item.price}</p>
+            <img src={item.image} alt={item.name} />
           </div>
         ))}
       </div>

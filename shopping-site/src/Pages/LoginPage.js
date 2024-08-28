@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import creds from "../Database/users/users";
 import { useNavigate } from "react-router-dom";
+import "./LoginPage.css";
 const LoginPage = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,11 +26,11 @@ const LoginPage = (props) => {
   };
 
   return (
-    <div>
+    <div className="loginform">
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <div>
-          <label>email:</label>
+          <label>Email:</label>
           <input
             type="text"
             value={email}
