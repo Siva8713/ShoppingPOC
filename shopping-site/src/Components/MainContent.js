@@ -7,6 +7,7 @@ import KidsCatergory from "./categories/kids/KidsCatergory";
 import FootwearCatergory from "./categories/footwear/FootwearCatergory";
 import WinterCatergory from "./categories/winter wear/WinterCatergory";
 import AccessoriesCatergory from "./categories/accessories/AccessoriesCatergory";
+import CategoriesCard from "../Cards/CategoriesCard";
 
 const MainContent = ({ user }) => {
   const clothingData = [
@@ -58,7 +59,6 @@ const MainContent = ({ user }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    console.log("clicked");
   };
 
   return (
@@ -70,14 +70,12 @@ const MainContent = ({ user }) => {
           <h1>Welcome {user.name} , what are you looking for? </h1>
           <div className={styles.product_list}>
             {clothingData.map((item) => (
-              <div
+              <CategoriesCard
                 key={item.id}
-                className={styles.product_item}
+                name={item.name}
+                image={item.image}
                 onClick={() => handleCategoryClick(item.component)}
-              >
-                <h2>{item.name}</h2>
-                <img src={item.image} alt={item.name} />
-              </div>
+              />
             ))}
           </div>
         </>
