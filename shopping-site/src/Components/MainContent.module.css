@@ -23,3 +23,9 @@
   width: 100%;
   height: auto;
 }
+
+.backButton {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
