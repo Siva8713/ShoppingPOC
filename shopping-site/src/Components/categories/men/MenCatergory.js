@@ -1,6 +1,8 @@
 import { useState } from "react";
 import CategoriesCard from "../../../Cards/CategoriesCard";
 import styles from "../../MainContent.module.css";
+import MenShirts from "./shirts";
+
 export default function MenCatergory({ onBack }) {
   const menCatergories = [
     {
@@ -8,6 +10,7 @@ export default function MenCatergory({ onBack }) {
       name: "Shirts",
       image:
         "https://img.freepik.com/premium-photo/strong-confident-young-hipster-looking-away-adjusting-his-jacket-while-standing-against-grey-background_425904-11115.jpg?ga=GA1.1.1135502366.1724772254&semt=ais_hybrid",
+      component: <MenShirts onBack={() => setSelectedCategory(null)} />,
     },
     {
       id: "2",

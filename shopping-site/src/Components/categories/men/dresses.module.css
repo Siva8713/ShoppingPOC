@@ -1,0 +1,26 @@
+.mainContent {
+  padding: 20px;
+  flex: 1;
+}
+
+.product_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+}
+
+.product_item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 26%;
+  text-align: center;
+}
+
+.product_item h2 {
+  margin-top: 0;
+}
+
+.product_item img {
+  width: 100%;
+  height: auto;
+}

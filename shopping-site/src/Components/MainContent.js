@@ -8,6 +8,7 @@ import FootwearCatergory from "./categories/footwear/FootwearCatergory";
 import WinterCatergory from "./categories/winter wear/WinterCatergory";
 import AccessoriesCatergory from "./categories/accessories/AccessoriesCatergory";
 import CategoriesCard from "../Cards/CategoriesCard";
+import Header from "./Header";
 
 const MainContent = ({ user }) => {
   const clothingData = [
