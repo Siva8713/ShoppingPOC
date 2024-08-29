@@ -24,7 +24,6 @@ const Header = ({ user, setSelectedCategory }) => {
 
   const goToHome = () => {
     setSelectedCategory(null); // Reset selected category
-    window.location.pathname = "/"; // Navigate to home (MainContent) page
   };
 
   return (
